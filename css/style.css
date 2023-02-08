@@ -1175,7 +1175,10 @@ strong {
     border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
   }
 }
-
+.is-sticky .navbar {
+  background: var(--white-color)!important;
+  box-shadow: var(--box-shadow);
+}
 @media screen and (max-width: 575px) {
   .navbar .container {
     margin-right: 12px;
