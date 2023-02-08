@@ -1,0 +1,111 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+
+        <title>Bogdan Iacob Portfolio</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="../css/magnific-popup.css" rel="stylesheet">
+
+        <link href="../css/style.css" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+       
+    </head>
+    
+    <body class="bg-neutral-100">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a href="index.html" class="navbar-brand mx-auto mx-lg-0">Bogdan Iacob</a>
+
+                <a id="back" class="cursor-pointer navbar-brand text"> Go Back</a>
+
+            </div>
+        </nav>
+        <div class="container flex justify-around bg-neutral-100 align-items-center">
+            <div class="col-4 flex text-center">
+                <div class="flex flex-col  align-items-center justify-center justify-content-center">
+                    <label>Left side color</label>
+                    <input type="color" id="select-bg-color" oninput="document.querySelector('#country').style.backgroundColor = this.value;document.querySelector('#background-eu').style.backgroundColor = this.value;">
+                    <label>Right side color</label>
+                    <input type="color" id="input-bg-color" oninput="document.querySelector('#registration').style.backgroundColor = this.value">
+                  </div>
+            </div>
+            <div id="plate" class="grid h-screen place-items-center bg-neutral-100">
+                <div class="rounded-lg bg-white shadow-lg">
+                  <div class="flex w-full rounded-lg border-4 border-black bg-yellow-500 shadow">
+                    <label id="background-eu" class="flex flex-col justify-between bg-blue-700 rounded-l p-4 text-2xl font-bold text-white"><img class="h-8" src="images/eu.svg" />                <select id="country" class="flex flex-col justify-between bg-blue-700 rounded-l p-4 text-2xl font-bold text-white">
+                        <option value="AT">AT</option>
+                        <option value="BE">BE</option>
+                        <option value="BG">BG</option>
+                        <option value="HR">HR</option>
+                        <option value="CY">CY</option>
+                        <option value="CZ">CZ</option>
+                        <option value="DK">DK</option>
+                        <option value="EE">EE</option>
+                        <option value="FI">FI</option>
+                        <option value="FR">FR</option>
+                        <option value="DE">DE</option>
+                        <option value="GR">GR</option>
+                        <option value="HU">HU</option>
+                        <option value="IE">IE</option>
+                        <option value="IT">IT</option>
+                        <option value="LV">LV</option>
+                        <option value="LT">LT</option>
+                        <option value="LU">LU</option>
+                        <option value="MT">MT</option>
+                        <option value="NL">NL</option>
+                        <option value="PL">PL</option>
+                        <option value="PT">PT</option>
+                        <option value="RO" selected>RO</option>
+                        <option value="SK">SK</option>
+                        <option value="SI">SI</option>
+                        <option value="ES">ES</option>
+                        <option value="SE">SE</option>
+                      </select></label>
+                      <input id="registration" type="text" class="p-4 font-mono text-6xl font-medium" style="max-width: 400px;" value="AA-BB-CC-DD" />      </div>
+                </div>     
+            </div>
+        </div>
+        <div class="text-center pb-3 mb-5">
+            <button id="download-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="downloadPlate()">Download</button>
+        </div>
+</body>
+</html>
+
+<script>
+function downloadPlate() {
+  const bgImage = document.querySelector("#background-eu img").src;
+  document.querySelector("#background-eu").style.backgroundImage = `url(${bgImage})`;
+  html2canvas(document.querySelector("#plate")).then(canvas => {
+    canvas.toBlob(function(blob) {
+      var link = document.createElement("a");
+      link.download = "register-plate.png";
+      link.href = URL.createObjectURL(blob);
+      link.click();
+    });
+  });
+}
+
+  </script>
