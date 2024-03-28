@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+
+        <title>Bogdan Iacob Portfolio</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="../css/magnific-popup.css" rel="stylesheet">
+
+        <link href="../css/style.css" rel="stylesheet">
+        
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+        <script data-goatcounter="https://0908.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+        <script>console.log = function(){ };</script>
+        
+    </head>
+    
+    <body>
+
+        <section class="preloader">
+            <div class="spinner">
+                <span class="spinner-rotate"></span>    
+            </div>
+        </section>
+
+        <nav class="navbar navbar-expand-lg" style="background-color:var(--secondary-color);">
+            <div class="container">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a href="index.html" class="navbar-brand mx-auto mx-lg-0">Bogdan Iacob</a>
+
+                <div class="d-flex align-items-center d-lg-none">
+                    <a class="custom-btn btn mx-3" href="/profile/Bogdan-Iacob-Software-Engineer-Resume.pdf">
+                        Download CV
+                     </a>
+                     <a class="custom-btn btn mx-3" id="darkMode" onclick="darkMode()" >
+                        <i class="bi bi-moon-stars-fill sm-3 "></i>
+                    </a>                    <a class="custom-btn btn" href="#section_5">
+                        (+40)  720 587 120
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="../index.html#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="../index.html#section_2">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="../index.html#section_3">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="blog.html">Blog</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="../tools/tools.html">Tools</a>
+                        </li>
+
+                       
+                    </ul>
+
+                    <div class="d-lg-flex align-items-center d-none ms-auto">
+                        <a class="custom-btn btn mx-3" target="_blank" href="../Bogdan-Iacob-Software-Engineer-Resume.pdf">
+                            Download CV
+                         </a>
+                        <i class="navbar-icon bi-telephone-plus me-3"></i>
+                        <a class="custom-btn btn" href="#section_5">
+                            (+40)  720 587 120
+                        </a>
+                    </div>
+
+                    <a class="custom-btn btn mx-3 d-none d-lg-flex" id="darkMode" onclick="darkMode()" >
+                        <i class="bi bi-moon-stars-fill sm-3 "></i>
+                    </a>
+
+                </div>
+
+            </div>
+        </nav>
+
+        <main>
+            <section class="services section-padding" id="section_3">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-10 col-12 mx-auto">
+                            <div class="section-title-wrap d-flex justify-content-center align-items-center mb-5">
+                                <h2 class="text-white ms-4 mb-0 text-center">Articles</h2>
+                            </div>
+
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+           <section class="projects section-padding" id="section_4">
+                <div class="container">
+                    <div class="row">
+
+                    
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="projects-thumb">
+                                <div class="projects-info">
+                                    <h3 class="projects-title">Simple fix for CSP: Inline Scripts Can Be Inserted </h3>
+                                </div>
+                                <a data-bs-toggle="modal" data-bs-target="#ArticleModal">
+                                    <i class="services-icon bi bi-window-fullscreen projects-image img-fluid"></i>
+                                </a>
+                                <div class="mt-5">
+                                <p>Date: 28th March 2024</p></div>
+                            </div>
+
+                            <div class="modal fade" id="ArticleModal" tabindex="-1" aria-labelledby="ArticleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog min-width-1140 ">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="ArticleModalLabel">Implementing Nonce CSP for Inline Scripts: Enhancing Security Post Pentesting</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body ">
+                                       
+    <h2>Abstract:</h2>
+    <p>
+        After conducting a thorough pentest on our web application, we discovered vulnerabilities in our Content Security Policy (CSP) related to inline scripts. This article discusses how we implemented the Nonce CSP directive to mitigate these vulnerabilities and enhance the security of our application.
+    </p>
+
+    <h2>Introduction:</h2>
+    <p>
+        Content Security Policy (CSP) is a crucial security mechanism that helps protect web applications against various types of attacks, including cross-site scripting (XSS) attacks. However, CSP configurations need to be carefully crafted to balance security and functionality. One common challenge is dealing with inline scripts, which can bypass CSP restrictions if not properly controlled.
+    </p>
+
+    <h2>Understanding the Issue:</h2>
+    <p>
+        During the pentesting process, we identified that our CSP configuration allowed the use of 'unsafe-inline' and 'unsafe-eval' directives for script execution. While this provided flexibility in terms of development, it also introduced significant security risks. Attackers could potentially inject malicious scripts via inline script tags or event handlers, compromising the integrity of our application.
+    </p>
+
+    <h2>Implementing Nonce CSP:</h2>
+    <p>
+        To address this issue, we decided to implement the Nonce CSP directive. Nonce (number used once) is a cryptographic value that serves as a unique identifier for inline scripts. By generating a random nonce value for each inline script and including it in the CSP header, we can ensure that only scripts with matching nonces are executed.
+    </p>
+<!---The actual steps-->
+    <h2>Here's how we implemented Nonce CSP:</h2>
+    <ol>
+        <li>
+            <strong>Generating Nonce Values:</strong>
+            <ul>
+                <li>We modified our server-side code to generate a unique nonce value for each HTTP response.</li>
+                <li>Nonce values are securely generated using cryptographic functions to prevent predictability.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Including Nonces in CSP Header:</strong>
+            <ul>
+                <li>We updated our CSP header to include the 'nonce' attribute along with the generated nonce value.</li>
+                <li>Inline script tags in our HTML documents are modified to include the 'nonce' attribute with the corresponding nonce value.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Enforcing CSP Policy:</strong>
+            <ul>
+                <li>With the Nonce CSP directive in place, the browser will only execute inline scripts that include the correct nonce value.</li>
+                <li>Any attempt to inject inline scripts without the correct nonce will be blocked by the browser, mitigating the risk of XSS attacks.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Testing and Validation:</strong>
+            <div class="text-center justify-content-center">
+                
+            <img src="../images/nonce-csp.png" alt="Nonce CSP" class="img-fluid">
+            </div>
+        </li>
+    </ol>
+
+    <h2>Benefits and Impact:</h2>
+    <p>
+        Implementing Nonce CSP for inline scripts has several benefits:
+        <ul>
+            <li><strong>Enhanced Security:</strong> Nonce-based CSP prevents unauthorized execution of inline scripts, reducing the risk of XSS attacks.</li>
+            <li><strong>Improved Compliance:</strong> By adhering to best practices for web security, we demonstrate our commitment to safeguarding user data and privacy.</li>
+            <li><strong>Minimal Impact on Functionality:</strong> Despite tightening our CSP policy, the impact on application functionality is minimal, thanks to careful testing and implementation.</li>
+        </ul>
+    </p>
+
+    <h2>Conclusion:</h2>
+    <p>
+       Implementing Nonce CSP for inline scripts has significantly strengthened the security posture of our web application. By addressing the vulnerabilities identified during the pentesting process, we demonstrate our dedication to proactive security measures and protecting our clients from potential threats. We encourage other organizations to consider implementing similar measures to enhance the security of their web applications.
+    </p>
+
+    <h2>References:</h2>
+    <p>
+        <ul>
+            <li>Content Security Policy Level 3 - W3C Recommendation: https://www.w3.org/TR/CSP3/</li>
+            <li>OWASP Content Security Policy Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</li>
+            <li>Google Developers - Web Fundamentals: https://developers.google.com/web/fundamentals/security/csp</li>
+            <li>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src</li>
+
+            <li>https://content-security-policy.com/unsafe-inline/</li>
+
+            <li>https://content-security-policy.com/nonce/</li>
+
+            <li>https://content-security-policy.com/hash/</li>
+        </ul>
+    <p>
+        Bogdan Iacob, 28th March 2024
+    </p>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                                
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+            </section> 
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12">
+                        <div class="copyright-text-wrap">
+                            <p class="mb-0">
+                                <span class="copyright-text">Copyright © Bogdan <span id="year"></span><a href="#"></a></span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.sticky.js"></script>
+        <script src="../js/jquery.magnific-popup.min.js"></script>
+        <script src="../js/magnific-popup-options.js"></script>
+        <script src="../js/custom.js"></script>
+
+        <script>
+            function getValue(value){
+                message = message + value;
+            }
+            
+            document.getElementById("year").innerHTML = new Date().getFullYear();
+            
+            var r = document.querySelector(':root');
+            function randomHSL(){
+             return "hsla(" + ~~(360 * Math.random()) + "," +
+                    "70%,"+
+                    "80%,1)"
+             }
+            // Create a function for setting a variable value
+            // Set the value of variable --blue to another value (in this case "lightblue")
+            r.style.setProperty('--primary-color', randomHSL());
+            r.style.setProperty('--secondary-color', randomHSL());
+
+            function darkMode(){
+                if(r.style.getPropertyValue('--primary-color')=='black'){
+                    r.style.setProperty('--primary-color', randomHSL());
+                    r.style.setProperty('--secondary-color', randomHSL());
+                    r.style.setProperty(' --white-color', '#fff');
+                }else{
+                r.style.setProperty('--primary-color', 'black');
+                r.style.setProperty('--secondary-color', 'gray');
+                r.style.setProperty(' --white-color', '#fff');
+
+                }
+            }
+        </script>
+    </body>
+</html>

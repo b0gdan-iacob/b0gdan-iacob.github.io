@@ -926,7 +926,9 @@ strong {
   border-color: transparent;
 }
 
-
+.min-width-1140 {
+  min-width: 1140px;
+}
 /*---------------------------------------
   SITE FOOTER              
 -----------------------------------------*/
