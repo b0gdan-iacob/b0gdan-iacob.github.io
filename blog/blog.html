@@ -28,7 +28,19 @@
         async src="//gc.zgo.at/count.js"></script>
 
         <script>console.log = function(){ };</script>
-        
+        <style>
+            .min-width-1140 {
+                min-width: 90%;
+                margin: 1rem;
+            }
+            
+            @media (max-width: 768px) {
+                .min-width-1140 {
+                    min-width: 95%;
+                    margin: 0.5rem;
+                }
+            }
+        </style>
     </head>
     
     <body>
@@ -102,46 +114,53 @@
             </div>
         </nav>
 
-        <main>
-            <section class="services section-padding" id="section_3">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-10 col-12 mx-auto">
-                            <div class="section-title-wrap d-flex justify-content-center align-items-center mb-5">
-                                <h2 class="text-white ms-4 mb-0 text-center">Articles</h2>
+        <section class="projects section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+                    <!-- First Article -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="projects-thumb">
+                            <div class="projects-info">
+                                <h3 class="projects-title">Infrastructure, just another startup chalange</h3>
                             </div>
+                            <a href="#" data-article="infrastructure-article" class="article-link">
+                                <i class="services-icon bi bi-window-fullscreen projects-image img-fluid"></i>
+                            </a>
+                            <div class="mt-5">
+                                <p>Date: 12 January 2025</p>
+                            </div>
+                        </div>
+                    </div>
 
-                           
+                    <!-- Second Article -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="projects-thumb">
+                            <div class="projects-info">
+                                <h3 class="projects-title">Simple fix for CSP: Inline Scripts Can Be Inserted</h3>
+                            </div>
+                            <a href="#" data-article="csp-article" class="article-link">
+                                <i class="services-icon bi bi-window-fullscreen projects-image img-fluid"></i>
+                            </a>
+                            <div class="mt-5">
+                                <p>Date: 28th March 2024</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
+    </main>
 
 
-           <section class="projects section-padding" id="section_4">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="projects-thumb">
-                                <div class="projects-info">
-                                    <h3 class="projects-title">Infrastructure, just another startup chalange</h3>
-                                </div>
-                                <a data-bs-toggle="modal" data-bs-target="#ArticleModal">
-                                    <i class="services-icon bi bi-window-fullscreen projects-image img-fluid"></i>
-                                </a>
-                                <div class="mt-5">
-                                <p>Date: 12 January 2025</p></div>
-                            </div>
-
-                            <div class="modal fade" id="ArticleModal" tabindex="-1" aria-labelledby="ArticleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog min-width-1140 ">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title" id="ArticleModalLabel">Infrastructure, just another startup chalange</h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
+    <div class="modal fade" id="infrastructure-article" tabindex="-1" aria-labelledby="infrastructureModalLabel" aria-hidden="true">
+        <!-- Infrastructure article content -->
+        <div class="modal-dialog min-width-1140">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Infrastructure, just another startup chalange</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
                                     <div class="modal-body ">
                                        
     <h2>Abstract:</h2>
@@ -195,24 +214,13 @@
                                 
                         </div>
 
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="projects-thumb">
-                                <div class="projects-info">
-                                    <h3 class="projects-title">Simple fix for CSP: Inline Scripts Can Be Inserted </h3>
-                                </div>
-                                <a data-bs-toggle="modal" data-bs-target="#ArticleModal">
-                                    <i class="services-icon bi bi-window-fullscreen projects-image img-fluid"></i>
-                                </a>
-                                <div class="mt-5">
-                                <p>Date: 28th March 2024</p></div>
-                            </div>
-
-                            <div class="modal fade" id="ArticleModal" tabindex="-1" aria-labelledby="ArticleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog min-width-1140 ">
-                                  <div class="modal-content">
+     <div class="modal fade" id="csp-article" tabindex="-1" aria-labelledby="cspModalLabel" aria-hidden="true">
+                            <!-- CSP article content -->
+                            <div class="modal-dialog min-width-1140">
+                                <div class="modal-content">
                                     <div class="modal-header">
-                                      <h5 class="modal-title" id="ArticleModalLabel">Implementing Nonce CSP for Inline Scripts: Enhancing Security Post Pentesting</h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <h5 class="modal-title">Simple fix for CSP: Inline Scripts Can Be Inserted</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body ">
                                        
@@ -304,17 +312,7 @@
                                   </div>
                                 </div>
                             </div>
-                                
-                        </div>
-
-                        
-                        
-
-                    </div>
-                </div>
-            </section> 
-        </main>
-
+    
         <footer class="site-footer">
             <div class="container">
                 <div class="row">
@@ -368,6 +366,66 @@
                 r.style.setProperty(' --white-color', '#fff');
 
                 }
+            }
+            
+
+        </script>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Handle article links
+                const articleLinks = document.querySelectorAll('.article-link');
+                articleLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const articleId = this.getAttribute('data-article');
+                        openArticle(articleId);
+                    });
+                });
+
+                // Check URL hash on page load
+                if (window.location.hash) {
+                    const articleId = window.location.hash.substring(1);
+                    openArticle(articleId);
+                }
+
+                // Handle modal events
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    modal.addEventListener('show.bs.modal', function() {
+                        const articleId = this.id;
+                        window.history.pushState(null, '', `#${articleId}`);
+                    });
+
+                    modal.addEventListener('hide.bs.modal', function() {
+                        window.history.pushState(null, '', window.location.pathname);
+                    });
+                });
+
+                // Handle browser back/forward buttons
+                window.addEventListener('popstate', function() {
+                    const articleId = window.location.hash.substring(1);
+                    if (articleId) {
+                        openArticle(articleId);
+                    } else {
+                        closeAllModals();
+                    }
+                });
+            });
+
+            function openArticle(articleId) {
+                const modal = new bootstrap.Modal(document.getElementById(articleId));
+                closeAllModals(); // Close any open modals first
+                modal.show();
+            }
+
+            function closeAllModals() {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    const bsModal = bootstrap.Modal.getInstance(modal);
+                    if (bsModal) {
+                        bsModal.hide();
+                    }
+                });
             }
         </script>
     </body>
