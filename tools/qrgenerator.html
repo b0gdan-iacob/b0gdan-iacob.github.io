@@ -1,130 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bogdan Iacob | QR Code Generator</title>
-  <meta name="description" content="QR Code Generator by Bogdan Iacob">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>QR Code Generator</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-icons.css" rel="stylesheet">
+    <link href="../css/magnific-popup.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
 
-  <!-- CSS -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/bootstrap-icons.css" rel="stylesheet">
-  <link href="../css/magnific-popup.css" rel="stylesheet">
-  <link href="../css/style.css" rel="stylesheet">
-
-  <!-- Tailwind (Optional, but keep only if used) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- QRCode.js -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-
-  <style>
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background-color: #f9fafb;
-    }
-
-    .card {
-      background: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
-      margin: 2rem auto;
-    }
-
-    input[type="text"],
-    input[type="color"] {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    button {
-      background-color: #0d6efd;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-    button:hover {
-      background-color: #0b5ed7;
-    }
-
-    #qrcode {
-      margin-top: 2rem;
-    }
-  </style>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background: #f8f9fa; /* Light grey background using Bootstrap's color palette */
+        }
+        .card {
+            background: white;
+            padding: 3rem; /* Increased padding */
+            border-radius: 15px; /* More rounded corners */
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15); /* More pronounced shadow */
+            text-align: center;
+            width: 100%;
+            max-width: 500px; /* Increased max width for better spacing */
+        }
+        .form-group {
+            margin-bottom: 1.5rem; /* Added spacing between form elements */
+        }
+        input[type="text"],
+        input[type="color"] {
+            padding: 1rem; /* Increased padding */
+            margin-top: 0.5rem;
+            width: 100%;
+            border: 1px solid #ced4da; /* Bootstrap's border color */
+            border-radius: 0.375rem; /* Bootstrap's border radius */
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+        }
+        button {
+            padding: 1rem 2rem; /* Increased button padding */
+            background-color: #007bff; /* Bootstrap's primary color */
+            color: white;
+            border: none;
+            border-radius: 0.375rem; /* Bootstrap's border radius */
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s ease-in-out;
+        }
+        button:hover {
+            background-color: #0056b3; /* Darker shade for hover effect */
+        }
+        #qrcode {
+            margin-top: 2rem; /* Increased spacing for the QR code */
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Bogdan Iacob</a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:history.back()">← Go Back</a>
-        </li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="index.html" class="navbar-brand mx-auto mx-lg-0">Bogdan Iacob</a>
+            <a id="back" class="cursor-pointer navbar-brand text"> Go Back</a>
+        </div>
+    </nav>
+    <div class="card">
+        <h2>QR Code Generator</h2>
+        <div class="form-group">
+            <input type="text" id="urlInput" class="form-control" placeholder="Enter URL (e.g. https://example.com)" />
+        </div>
+        <div class="form-group">
+            <label for="colorInput" class="form-label">QR Code Color:</label>
+            <input type="color" id="colorInput" class="form-control form-control-color" value="#000000" title="Primary Color">
+        </div>
+        <div class="form-group">
+            <label for="bgColorInput" class="form-label">Background Color:</label>
+            <input type="color" id="bgColorInput" class="form-control form-control-color" value="#ffffff" title="Background Color">
+        </div>
+        <button onclick="generateQRCode()" class="btn btn-primary">Generate QR Code</button>
+        <div id="qrcode" class="mt-4 mx-auto"></div>
     </div>
-  </div>
-</nav>
 
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    <script>
+        let qr;
+        function generateQRCode() {
+            const url = document.getElementById("urlInput").value.trim();
+            const color = document.getElementById("colorInput").value;
+            const bgColor = document.getElementById("bgColorInput").value;
 
-  <!-- QR Code Generator -->
-  <section class="card">
-    <h2 class="mb-4 text-center">QR Code Generator</h2>
-    <input type="text" id="urlInput" placeholder="Enter URL (e.g. https://activo.live)" />
-    <label>Primary Color:</label>
-    <input type="color" id="colorInput" value="#000000" />
-    <label>Background Color:</label>
-    <input type="color" id="bgColorInput" value="#ffffff" />
-    <button onclick="generateQRCode()">Generate QR Code</button>
-    <div id="qrcode" class="text-center"></div>
-  </section>
+            if (!url) {
+                alert("Please enter a valid URL.");
+                return;
+            }
 
-  <script>
-    function generateQRCode() {
-      const url = document.getElementById("urlInput").value.trim();
-      const color = document.getElementById("colorInput").value;
-      const bgColor = document.getElementById("bgColorInput").value;
+            // Clear previous QR code
+            document.getElementById("qrcode").innerHTML = "";
 
-      if (!url) {
-        alert("Please enter a valid URL.");
-        return;
-      }
-
-      const qrCodeDiv = document.getElementById("qrcode");
-      qrCodeDiv.innerHTML = ""; // Clear previous QR
-
-      new QRCode(qrCodeDiv, {
-        text: url,
-        width: 256,
-        height: 256,
-        colorDark: color,
-        colorLight: bgColor,
-        correctLevel: QRCode.CorrectLevel.H
-      });
-    }
-  </script>
-
+            qr = new QRCode(document.getElementById("qrcode"), {
+                text: url,
+                width: 256,
+                height: 256,
+                colorDark: color,
+                colorLight: bgColor,
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+    </script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
